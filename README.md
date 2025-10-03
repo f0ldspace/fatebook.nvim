@@ -1,0 +1,2 @@
+# fatebook.nvim
+
