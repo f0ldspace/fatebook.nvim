@@ -17,7 +17,7 @@ Add this to your LazyVim config (e.g., `~/.config/nvim/lua/plugins/fatebook.lua`
 
 ```lua
 return {
-  "f0ldspace/fatebook.nvim"
+  "f0ldspace/fatebook.nvim",
   config = function()
     require("fatebook").setup({
       api_key = "your-api-key-here"
