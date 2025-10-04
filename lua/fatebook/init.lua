@@ -8,7 +8,7 @@ function M.setup(opts)
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 
 	if not M.config.api_key then
-		vim.notify("Fatebook: no api", vim.log.levels.ERROR)
+		vim.notify("Fatebook: No API key found.", vim.log.levels.ERROR)
 	end
 end
 
@@ -34,13 +34,13 @@ end
 
 function M.create_prediction(question, forecast, date)
 	if not M.config.api_key then
-		vim.notify("Fatebook: No API", vim.log.levels.ERROR)
+		vim.notify("Fatebook: No API found.", vim.log.levels.ERROR)
 		return
 	end
 
 	local forecast_num = tonumber(forecast)
 	if not forecast_num or forecast_num < 0 or forecast_num > 100 then
-		vim.notify("Fatebook: Forecast issue", vim.log.levels.ERROR)
+		vim.notify("Fatebook: Forecast out of range, use between 0-100", vim.log.levels.ERROR)
 		return
 	end
 
